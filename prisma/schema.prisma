@@ -28,6 +28,14 @@ model Stay {
   bookings    Booking[]
   city        City      @relation(fields: [cityId], references: [id])
   cityId      Int
+  images      StayImage[]
+}
+
+model StayImage {
+  id     Int    @id @default(autoincrement())
+  url    String
+  stay   Stay   @relation(fields: [stayId], references: [id])
+  stayId Int
 }
 
 model Booking {

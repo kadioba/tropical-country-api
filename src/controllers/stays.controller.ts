@@ -7,9 +7,9 @@ async function getStaysByCityId(req: Request, res: Response) {
 
     try {
         const stays = await staysService.getStaysByCityId(cityId);
-        res.status(httpStatus.OK).send(stays);
+        return res.status(httpStatus.OK).send(stays);
     } catch (error) {
-        res.status(httpStatus.INTERNAL_SERVER_ERROR)
+        return res.status(httpStatus.INTERNAL_SERVER_ERROR)
     }
 }
 
@@ -18,9 +18,9 @@ async function getStayById(req: Request, res: Response) {
 
     try {
         const stay = await staysService.getStayById(stayId);
-        res.status(httpStatus.OK).send(stay);
+        return res.status(httpStatus.OK).send(stay);
     } catch (error) {
-        res.status(httpStatus.INTERNAL_SERVER_ERROR)
+        return res.status(httpStatus.INTERNAL_SERVER_ERROR)
     }
 }
 

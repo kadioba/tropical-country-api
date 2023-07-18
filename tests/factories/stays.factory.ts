@@ -13,3 +13,22 @@ export function createStay(cityId: number) {
         }
     })
 }
+
+export function createPicturesForStay(stayId: number) {
+    return prisma.stayImage.createMany({
+        data: [
+            {
+                url: faker.image.url(),
+                stayId: stayId
+            },
+            {
+                url: faker.image.url(),
+                stayId: stayId
+            },
+            {
+                url: faker.image.url(),
+                stayId: stayId
+            },
+        ]
+    })
+}
